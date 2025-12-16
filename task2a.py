@@ -8,7 +8,7 @@ fig, ax = plt.subplots()
 r0x = 17.5
 r0y = 37.5
 rlim = 5/2
-alfa = 2
+alfa = np.ones((100, 100)) * 2
 u0 = 100
 
 def r(x, y):
@@ -24,7 +24,7 @@ Grid = np.meshgrid(interval, interval)
 Data = u(r(Grid[0], Grid[1]), 0)
 time = np.linspace(0.001,5,100)
 
-im = ax.imshow(Data, cmap="plasma", origin="lower")
+im = ax.imshow(Data, cmap="jet", origin="lower")
 
 def update(frame):
     Data_ = u(r(Grid[0], Grid[1]), time[frame])
